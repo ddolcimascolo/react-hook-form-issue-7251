@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { useForm } from 'react-hook-form'
+
 function App() {
+  const { register } = useForm();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +22,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <div>
+        <form>
+          <input {...register('myField')} />
+        </form>
+      </div>
     </div>
   );
 }
